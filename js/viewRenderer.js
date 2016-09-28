@@ -2,7 +2,7 @@ var Nav = {
     Config: {
         brand: {
             name: 'myBootstrap',
-            href: '/',
+            href: 'index.html',
             icon: 'home'
         },
         left_links: [
@@ -43,7 +43,7 @@ var Nav = {
         html += '</div>';
 
         html += '<div id="bar">';
-        html += '<div id="ham-menu" class="open" onclick="Nav.hideMenu()"><span></span><span></span><span></span></div>';
+        html += '<div id="ham-menu" onclick="Nav.showMenu()"><span></span><span></span><span></span></div>';
         html += '<div id="page-title">'+'Page Title'+'</div>';
         html += '<div>';
 
