@@ -16,14 +16,14 @@ var Nav = {
             {
                 label: 'Sign In',
                 href: '#',
-                icon: 'pencil'
+                icon: 'sign-in'
             }
         ]
     },
 
     renderNav: function() {
-        var html = '<div id="menu">';
-        html += '<div class="navbar-left">';
+        var html = '<div id="menu" class="show">';
+        html += '<div class="navbar-menu-section">';
         html += '<a href="' + Nav.Config.brand.href + '"><i class="fa fa-' + Nav.Config.brand.icon + '" aria-hidden="true"></i>' + Nav.Config.brand.name + '</a>';
         for (var l = 0; l < Nav.Config.left_links.length; l++) {
             html += '<a href="' + Nav.Config.left_links[l].href + '">';
@@ -32,7 +32,7 @@ var Nav = {
             html += '</a>'
         }
         html += '</div>';
-        html += '<div class="navbar-right">';
+        html += '<div class="navbar-menu-section">';
         for (var r = 0; r < Nav.Config.right_links.length; r++) {
             html += '<a href="' + Nav.Config.right_links[r].href + '">';
             html += '<i class="fa fa-' + Nav.Config.right_links[r].icon + '" aria-hidden="true"></i>';
@@ -43,11 +43,23 @@ var Nav = {
         html += '</div>';
 
         html += '<div id="bar">';
-        html += '<div id="ham-menu"></div>';
-        html += '<div id="page-title">'+'title'+'</div>';
+        html += '<div id="ham-menu" class="open" onclick="Nav.hideMenu()"><span></span><span></span><span></span></div>';
+        html += '<div id="page-title">'+'Page Title'+'</div>';
         html += '<div>';
 
         return html;
+    },
+
+    showMenu: function() {
+        document.getElementById('menu').style.width = '60vw';
+        document.getElementById('ham-menu').onclick = function(){Nav.hideMenu()};
+        document.getElementById('ham-menu').className = 'open';
+    },
+
+    hideMenu: function() {
+        document.getElementById('menu').style.width = '0';
+        document.getElementById('ham-menu').onclick = function(){Nav.showMenu()};
+        document.getElementById('ham-menu').className = '';
     }
 };
 
