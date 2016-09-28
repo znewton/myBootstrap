@@ -43,7 +43,7 @@ var Nav = {
         html += '</div>';
 
         html += '<div id="bar">';
-        html += '<div id="ham-menu" onclick="Nav.showMenu()"><span></span><span></span><span></span></div>';
+        html += '<div id="ham-menu" onclick="Nav.showMenu()"><div><span></span><span></span><span></span></div></div>';
         html += '<div id="page-title">'+'Page Title'+'</div>';
         html += '<div>';
 
@@ -54,12 +54,16 @@ var Nav = {
         document.getElementById('menu').style.width = '60vw';
         document.getElementById('ham-menu').onclick = function(){Nav.hideMenu()};
         document.getElementById('ham-menu').className = 'open';
+        document.getElementById('content').style.left = '60vw';
+        document.getElementById('content').style.width = '40vw';
     },
 
     hideMenu: function() {
         document.getElementById('menu').style.width = '0';
         document.getElementById('ham-menu').onclick = function(){Nav.showMenu()};
         document.getElementById('ham-menu').className = '';
+        document.getElementById('content').style.left = '0';
+        document.getElementById('content').style.width = '100vw';
     }
 };
 
