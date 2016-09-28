@@ -67,13 +67,44 @@ var Nav = {
     }
 };
 
-function renderFooter(){
-    var html = [];
+var Foot = {
+    Config: {
+        contact_info: {
+            show: true,
+            address: '1234 Street Ave., City, ST',
+            phone: '(123)456-789',
+            email: 'email@gmail.com'
+        },
+        links: {
+            show: true,
+            social: [
+                {
+                    label: 'Facebook',
+                    href: 'http://www.facebook.com',
+                    icon: 'facebook'
+                },
+                {
+                    label: 'GitHub',
+                    href: 'http://www.github.com',
+                    icon: 'github'
+                }
+            ]
+        }
+    },
 
-    return html.join('');
-}
+    renderFoot: function() {
+        var html = '';
+        if (Foot.Config.contact_info.show){
+            html += '<div class="section">';
+
+            html += '</div>'
+        }
+
+        return html;
+    }
+};
 
 window.onload = function(){
     document.getElementById('nav').innerHTML = Nav.renderNav();
-    document.getElementById('footer').innerHTML = renderFooter();
+    document.getElementById('foot').innerHTML = Foot.renderFoot();
 };
