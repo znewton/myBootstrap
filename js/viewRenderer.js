@@ -96,8 +96,12 @@ var Foot = {
         var html = '';
         if (Foot.Config.contact_info.show){
             html += '<div class="section">';
-
-            html += '</div>'
+            html += '<div id="address">' +
+                '<a href="http://maps.google.com/?q='+encodeURIComponent(Foot.Config.contact_info.address).replace('_','+')+'">' +
+                '<i class="fa fa-map-marker"></i>' +
+                Foot.Config.contact_info.address +
+                '</a></div>';
+            html += '</div>';
         }
 
         return html;

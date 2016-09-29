@@ -1,15 +1,20 @@
 body{
     margin: 0;
+    width: 99vw;
+}
+#wrapper{
     font-family: sans-serif;
+    width: 100vw;
+    max-width: 100vw;
     position: fixed;
-    left: 0;
-    top: 0;
 }
 #nav {
     font-size: 6vw;
 }
 #nav #bar {
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: 999;
     height: 12vw;
     line-height: 12vw;
@@ -152,21 +157,23 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
-    padding-top: 12vw;
-    height: 100vh;
-    max-height: 100vh;
-    overflow-y: scroll;
-    font-size: 4vw;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    overflow-x: hidden;
+    width: 98vw;
+    max-width: 98vw;
+    font-size: 5vw;
+    margin: 12vw 1vw 0 1vw;
+    /*overflow-y: scroll;*/
     transition: all 0.35s ease-in-out;
 }
 #content .container {
-    width: 100vw;
+    display: inline-block;
+    width: 98vw;
 }
 
 
 
-#foot
+#foot{
+    display: inline-block;
+    width: 100vw;
+    font-size: 4vw;
+    position: relative;
+}
